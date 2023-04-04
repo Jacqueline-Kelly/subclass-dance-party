@@ -12,6 +12,7 @@ makeSpinningDancer.prototype.constructor = makeSpinningDancer;
 
 makeSpinningDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
+
   if (this.$p) {
     this.$p.toggle();
   }

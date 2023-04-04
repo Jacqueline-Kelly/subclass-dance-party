@@ -12,10 +12,21 @@ makeDancer.prototype.step = function () {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
-makeDancer.prototype.setPosition = function (top, left) {
+makeDancer.prototype.setPosition = function () {
   var styleSettings = {
-    top: top,
-    left: left,
+    top: this.top,
+    left: this.left,
   };
   this.$node.css(styleSettings);
+};
+
+makeDancer.prototype.lineUp = function() {
+  this.top = 0;
+  this.left = 0;
+  this.setPosition(this.top, this.left);
+  // var styleSettings = {
+  //   top: 1,
+  //   left: 0,
+  // };
+  // this.$node.css(styleSettings);
 };

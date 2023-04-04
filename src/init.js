@@ -27,7 +27,40 @@ $(document).ready(function() {
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
+    window.dancers.push(dancer); //append to global array
     $('body').append(dancer.$node);
+  });
+
+  //make lineup button, when called :
+  // loop through window.dancers array and call lineup on each of the dancer's type
+  $('.addLineUp').on('click', function(event) {
+    // var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+    // var dancerMakerFunction = window[dancerMakerFunctionName];
+    for (var i = 0; i < window.dancers.length; i++) {
+      window.dancers[i].lineUp();
+    }
+  });
+  // make dancers interact
+  // loop through the window.dancers array and calculate each dancer's distance from the zeroth element
+  // then order a new array in order of increasing distance from first element
+  // and then split the array into pairs to lineup with each other
+  $('.addInteractButton').on('click', function(event) {
+
+    var even = function (el) {
+      return el % 2 === 0;
+    };
+
+    window.dancers.forEach((dancer, i) => {
+      if (even(i)) {
+        dancer.top = '100px';
+        dancer.left = '100px';
+
+      } else {
+        dancer.top = '500px';
+        dancer.left = '500px';
+      }
+      dancer.setPosition();
+    });
   });
 });
 
