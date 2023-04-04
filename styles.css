@@ -25,3 +25,8 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.hero{
+  border:10px solid green;
+  border-radius:12px;
+  position:absolute;
+}
