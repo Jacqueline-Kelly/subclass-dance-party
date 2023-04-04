@@ -21,12 +21,30 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  border:1rem solid pink;
+  border-radius:1rem;
   position:absolute;
 }
 .hero{
-  border:10px solid green;
-  border-radius:12px;
-  position:absolute;
+  border:1px solid green;
+  width: 5rem;
+  height: 5em;
+  background-image: url("Superhero-8.jpg");
+  background-size: contain;
+}
+.spinning{
+  width: 10rem;
+  height: 10rem;
+  background-size: 10rem;
+  background-image: url("image.png");
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

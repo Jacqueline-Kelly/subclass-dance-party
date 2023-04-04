@@ -3,7 +3,8 @@
 
 var makeHeroDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.$node = $('<span class="hero"><p>kappow!</p></span>');
+  this.$node.addClass('hero');
+  this.$node.text('kappow');
 };
 
 makeHeroDancer.prototype = Object.create(makeDancer.prototype);
